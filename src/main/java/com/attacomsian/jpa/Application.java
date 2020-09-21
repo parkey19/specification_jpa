@@ -100,9 +100,9 @@ public class Application {
 //            movies.forEach(System.out::println);
 
             Specification<Item> redOrBlue = ItemSpecification.withColor("RED", "BLUE");
-            Specification<Item> aOrb = ItemSpecification.withGrade("A", "B");
-            Specification<Item> withName = ItemSpecification.withName("18");
-            List<Item> all = itemRepository.findAll(redOrBlue.and(aOrb).and(withName));
+            Specification<Item> aOrb = ItemSpecification.withGradeAndName("A", "18");
+//            Specification<Item> withName = ItemSpecification.withName("18");
+            List<Item> all = itemRepository.findAll(redOrBlue.and(aOrb));
             all.forEach(System.out::println);
 
             /**

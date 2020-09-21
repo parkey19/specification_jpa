@@ -19,10 +19,10 @@ public class ItemSpecification {
         );
     }
 
-    public static Specification<Item> withGrade(String grade1, String grade2) {
+    public static Specification<Item> withGradeAndName(String grade, String name) {
         return (Specification<Item>) ((root, query, builder) -> {
-            Predicate p1 = builder.equal(root.get("grade"), grade1);
-            Predicate p2 = builder.equal(root.get("grade"), grade2);
+            Predicate p1 = builder.equal(root.get("grade"), grade);
+            Predicate p2 = builder.equal(root.get("name"), name);
             return builder.or(p1, p2);
         }
         );
